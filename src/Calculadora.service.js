@@ -27,6 +27,7 @@ function CalculadoraService() {
 
     return resultado;
   }
+
   return [calcular, SOMA, SUBTRACAO, MULTIPLICACAO, DIVISAO];
 }
 
