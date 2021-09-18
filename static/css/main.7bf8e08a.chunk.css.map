@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/Calculadora.css"],"names":[],"mappings":"AAAA,OACI,SAAU,CACV,oBAEJ,CACA,iBACI,cAAe,CACf,SAAU,CACV,eACJ","file":"main.7bf8e08a.chunk.css","sourcesContent":["button {\n    width: 90%;\n    margin: 4px !important;\n\n}\ninput[type-text]{\n    margin-top: 3px;\n    width: 96%;\n    margin-left: 6px;\n}"]}
