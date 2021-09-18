@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="/home/alexsandro/Documentos/front-estudo/treinando_react/calculadora/calculadora/src/_tests_/Calculadora.service.test.js">
+    <testCase name="Validando calculadora service deve garantir que 1 + 4 = 5" duration="2"/>
+    <testCase name="Validando calculadora service deve garantir que 10-4= 6" duration="0"/>
+    <testCase name="Validando calculadora service deve garantir que 10/2= 5" duration="1"/>
+    <testCase name="Validando calculadora service deve garantir que 10*2= 20" duration="0"/>
+    <testCase name="Validando calculadora service deve garantir que irá zerar para caso não identifique a operação 10%2= 0" duration="0"/>
+  </file>
+  <file path="/home/alexsandro/Documentos/front-estudo/treinando_react/calculadora/calculadora/src/_tests_/Calculadora.test.js">
+    <testCase name="Renderizando calculadora Deve limpa tela de resultado" duration="73"/>
+    <testCase name="Renderizando calculadora Deve realizar um calculo de soma" duration="47"/>
+    <testCase name="Renderizando calculadora Deve realizar um calculo de divisao" duration="46"/>
+    <testCase name="Renderizando calculadora Deve realizar um calculo de multiplicacao" duration="46"/>
+    <testCase name="Renderizando calculadora Deve realizar um calculo de subtracao" duration="43"/>
+  </file>
+</testExecutions>
