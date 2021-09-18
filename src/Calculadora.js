@@ -60,6 +60,7 @@ function Calculadora() {
           <Col xs="9">
             <Form.Control
               type="text"
+              data-testid="visorResultados"
               name="visorResultados"
               className="text-right"
               readOnly="readonly"

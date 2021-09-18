@@ -1,4 +1,4 @@
-import CalculadoraService from "./Calculadora.service";
+import CalculadoraService from "../Calculadora.service";
 
 describe("Validando calculadora service", () => {
   const [calcular,SOMA, SUBTRACAO, MULTIPLICACAO, DIVISAO] =CalculadoraService();
