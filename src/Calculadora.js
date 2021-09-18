@@ -1,20 +1,43 @@
 import "./Calculadora.css";
 import { Jumbotron, Container, Row, Col, Button, Form } from "react-bootstrap";
 import React, { useState } from "react";
+import CalculadoraService from "./Calculadora.service";
 
 function Calculadora() {
-  const [telaResultado, setTelaResultado] = useState("0");
+  const [calcular, SOMA, SUBTRACAO, MULTIPLICACAO, DIVISAO] =
+    CalculadoraService();
+
+  const [telaResultado, setTelaResultado] = useState('0');
+  const [primeiroNumero, setPrimeiroNumero] = useState('0');
+  const [segundoNumero, setSegundoNumero] = useState(null);
+  const [operacao, setOperacao] = useState(null);
 
   function adicionarNumero(numero) {
-    setTelaResultado(telaResultado + numero);
+    if (operacao === null) {
+
+      setPrimeiroNumero(numero);
+    } else{
+      setSegundoNumero(numero)
+    }
+   
+    setTelaResultado(numero);
   }
 
   function definirOperacao(operacao) {
+    setOperacao(operacao);
     setTelaResultado(operacao);
   }
 
   function limpaTela() {
+    setPrimeiroNumero('0');
+    setSegundoNumero(null);
+    setOperacao(null);
     setTelaResultado(0);
+  }
+
+  function realizaCalculo(){
+    let resultado = calcular(primeiroNumero, segundoNumero, operacao);
+    setTelaResultado(resultado);
   }
 
   return (
@@ -30,11 +53,12 @@ function Calculadora() {
       <Container>
         <Row>
           <Col xs="3">
-            <Button variant="danger" onClick={limpaTela}>C</Button>
+            <Button variant="danger" onClick={limpaTela}>
+              C
+            </Button>
           </Col>
           <Col xs="9">
             <Form.Control
-              
               type="text"
               name="visorResultados"
               className="text-right"
@@ -61,7 +85,7 @@ function Calculadora() {
             </Button>
           </Col>
           <Col>
-            <Button variant="warning" onClick={() => definirOperacao("/")}>
+            <Button variant="warning" onClick={() => definirOperacao(DIVISAO)}>
               /
             </Button>
           </Col>
@@ -84,7 +108,10 @@ function Calculadora() {
             </Button>
           </Col>
           <Col>
-            <Button variant="warning" onClick={() => definirOperacao("*")}>
+            <Button
+              variant="warning"
+              onClick={() => definirOperacao(MULTIPLICACAO)}
+            >
               *
             </Button>
           </Col>
@@ -107,7 +134,10 @@ function Calculadora() {
             </Button>
           </Col>
           <Col>
-            <Button variant="warning" onClick={() => definirOperacao("-")}>
+            <Button
+              variant="warning"
+              onClick={() => definirOperacao(SUBTRACAO)}
+            >
               -
             </Button>
           </Col>
@@ -120,13 +150,15 @@ function Calculadora() {
             </Button>
           </Col>
           <Col>
-            <Button variant="light">.</Button>
+            <Button variant="light" onClick={() => adicionarNumero(".")}>
+              .
+            </Button>
           </Col>
           <Col>
-            <Button variant="success">=</Button>
+            <Button variant="success" onClick={realizaCalculo}>=</Button>
           </Col>
           <Col>
-            <Button variant="warning" onClick={() => definirOperacao("+")}>
+            <Button variant="warning" onClick={() => definirOperacao(SOMA)}>
               +
             </Button>
           </Col>
